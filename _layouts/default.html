@@ -57,7 +57,7 @@
           {% for testimonial in site.data.testimonials %}
           <div class="testimonial box">
             <p class="quote">{{ testimonial.quote }}</p>
-            <p class="reviewer"><a href="{{ testimonial.quote }}" target="_blank">@{{ testimonial.reviewer }}</a></p>
+            <p class="reviewer"><a href="{{ testimonial.link }}" target="_blank">@{{ testimonial.reviewer }}</a></p>
           </div>
           {% endfor %}
 
