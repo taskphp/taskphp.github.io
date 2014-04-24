@@ -75,7 +75,7 @@ Add to your `composer.json`:
 ...
 ```
 
-This will allow you to instantiate a `Task\Project`. To run tasks from the command line, install task/cli. You should probably do this now!
+This will allow you to instantiate a `Task\Project`. To run tasks from the command line, install [task/cli](https://github.com/taskphp/cli). You should probably do this now!
 
 Usage
 =====
@@ -113,7 +113,7 @@ Available commands:
   shell
 ```
 
-If you've used Symfony's Console component before this will look familiar! Your `Task\Project` is a `Symfony\Component\Console\Application` and so you have a pretty CLI application out of the box.
+If you've used [Symfony's Console component](https://github.com/symfony/console) before this will look familiar! Your `Task\Project` is a `Symfony\Component\Console\Application` and so you have a pretty CLI application out of the box.
 
 Add a task:
 

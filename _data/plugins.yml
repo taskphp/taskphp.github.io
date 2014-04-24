@@ -1,0 +1,27 @@
+- name: task/archive
+  repo: taskphp/archive
+  description: Build tar and zip archives
+
+- name: task/box
+  repo: taskphp/box
+  description: Run kherge/box commands
+
+- name: task/console
+  repo: taskphp/console
+  description: symfony/console tools
+
+- name: task/filesystem
+  repo: taskphp/filesystem
+  description: symfony/filesystem and more
+
+- name: task/phpspec
+  repo: taskphp/phpspec
+  description: Run PhpSpec tests
+
+- name: task/phpunit
+  repo: taskphp/phpunit
+  description: Run PHPUnit tests
+
+- name: task/process
+  repo: taskphp/process
+  description: Subprocesses with symfony/process

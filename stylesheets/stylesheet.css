@@ -369,6 +369,37 @@ footer a:hover {
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
 
+/* ASIDE */
+
+aside h1 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #474747;
+  margin-top: 20px;
+}
+
+aside h2 {
+  font-size: 12px;
+  font-weight: bold;
+  color: #474747;
+}
+
+aside .box {
+    border: 1px solid #d8d8d8;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+aside .box p {
+    margin-bottom: 3px;
+}
+
+aside .testimonial .quote {
+    font-style: italic;
+}
+
+
 /* #Media Queries
 ================================================== */
 
