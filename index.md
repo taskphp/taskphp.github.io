@@ -44,7 +44,7 @@ $project->addTask('test', ['phpspec', function ($phpspec) {
 }]);
 
 $project->addTask('css', ['fs', 'sass', function ($fs, $sass) {
-    fs->open('my.scss')
+    $fs->open('my.scss')
         ->pipe($sass)
         ->pipe($fs->touch('my.css'));
 }]);
@@ -95,7 +95,7 @@ $project = new Task\Project('foo');
 return $project;
 ```
 
-We suggest putting the `Taskfile` in the root of yo project. The CLI package will look for a `Taskfile` in the current working directory, so `cd` in to your project and run:
+We suggest putting the `Taskfile` in the root of your project. The CLI package will look for a `Taskfile` in the current working directory, so `cd` in to your project and run:
 
 ```bash
 $> task
