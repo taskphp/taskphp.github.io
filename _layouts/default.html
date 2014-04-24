@@ -54,15 +54,26 @@
           {% endfor %}
 
           <h1>Testimonials</h1>
+          {% for testimonial in site.data.testimonials %}
           <div class="testimonial box">
-            <p class="quote">gaaah, just use bash!</p>
-            <p class="reviewer"><a href="https://github.com/glenjamin" target="_blank">@glenathan</a></p>
+            <p class="quote">{{ testimonial.quote }}</p>
+            <p class="reviewer"><a href="{{ testimonial.quote }}" target="_blank">@{{ testimonial.reviewer }}</a></p>
           </div>
+          {% endfor %}
 
         </aside>
       </div>
     </div>
 
-  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-50354042-1', 'taskphp.github.io');
+    ga('send', 'pageview');
+
+  </script> 
   </body>
 </html>

@@ -397,6 +397,8 @@ aside .box p {
 
 aside .testimonial .quote {
     font-style: italic;
+    padding-left: 5px;
+    border-left: 1px solid #ccc;
 }
 
 
