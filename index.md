@@ -1,6 +1,6 @@
 ---
 layout: default
-title: A Phing killing PHP task runner. 
+title: Another PHP task runner. 
 ---
 
 [![Build Status](https://travis-ci.org/taskphp/task.svg?branch=master)](https://travis-ci.org/taskphp/task)
