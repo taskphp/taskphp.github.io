@@ -12,6 +12,7 @@ Got a PHP project? Heard of Grunt and Gulp but don't use NodeJS?  Task is a pure
 * Employ Symfony components for effortless CLI goodness.
 * Extend with plugins.
 
+
 Example
 =======
 
@@ -210,3 +211,8 @@ Streams
 -------
 
 Plugins are encouraged to use NodeJS-style streams for handling data flows. `Task\Plugin\Stream\ReadableInterface` provides `read` and `pipe` methods, `Task\Plugin\Stream\WritableInterface` provides a `write` method. In the example above `ProcessPlugin::build` returns a `Task\Plugin\Process\ProcessBuilder`, which implements `ReadableInterface`, allowing us to `pipe` a `Task\Plugin\Console\Output\Output` instance to it, which implements `WritableInterface`.
+
+Discussion
+==========
+
+* See [nikic's article on PHP over XML](https://nikic.github.io/2012/07/09/A-plea-for-less-XML-configuration-files.html) for a great argument for using pure PHP for configuration.
