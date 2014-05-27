@@ -18,6 +18,7 @@ Got a PHP project? Heard of Grunt and Gulp but don't use NodeJS?  Task is a pure
 * Employ Symfony components for effortless CLI goodness.
 * Extend with plugins.
 
+Ask us anything on Twitter at [@taskphp](https://twitter.com/taskphp).
 
 Example
 =======
