@@ -57,7 +57,7 @@ $project->addTask('css', ['fs', 'sass', function ($fs, $sass) {
         ->pipe($fs->touch('my.css'));
 }]);
 
-$project->addTask('css.watch', ['watch', function ($watch) use ($project) {
+$project->addTask('css.watch', ['watch', function ($watch) {
     $watch->init('my.scss')
         ->addListener('modify', function ($event) {
             $this->runTask('css', $this->getOutput());
