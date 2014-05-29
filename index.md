@@ -48,7 +48,7 @@ $project->addTask('test', ['phpspec', function ($phpspec) {
     $phpspec->command('run')
         ->setFormat('pretty')
         ->setVerbose(true)
-        ->run($this->getOutput());
+        ->pipe($this->getOutput());
 }]);
 
 $project->addTask('css', ['fs', 'sass', function ($fs, $sass) {
@@ -58,11 +58,9 @@ $project->addTask('css', ['fs', 'sass', function ($fs, $sass) {
 }]);
 
 $project->addTask('css.watch', ['watch', function ($watch) use ($project) {
-    $output = $this->getOutput();
-    
     $watch->init('my.scss')
-        ->addListener('modify', function ($event) use ($project, $output) {
-            $project->runTask('css', $output);
+        ->addListener('modify', function ($event) {
+            $this->runTask('css', $this->getOutput());
         })
         ->start();
 }]);
@@ -78,7 +76,7 @@ Add to your `composer.json`:
 ```json
 ...
     "require": {
-        "task/task": "~0.1"
+        "task/task": "~0.5"
     }
 ...
 ```
@@ -223,3 +221,11 @@ Discussion
 ==========
 
 * See [nikic's article on PHP over XML](https://nikic.github.io/2012/07/09/A-plea-for-less-XML-configuration-files.html) for a great argument for using pure PHP for configuration.
+
+Alternatives
+============
+
+There's a few PHP task runners popping up:
+
+* Bldr - http://bldr.io/
+* Robo - http://codegyre.github.io/Robo/
