@@ -100,7 +100,7 @@ export PATH=$PATH:$HOME/.composer/vendor/bin
 Download from Github:
 
 ```bash
-$> wget -O /usr/bin/task https://github.com/task/cli/releases/v0.2.0/task.phar
+$> wget -O /usr/bin/task https://github.com/task/cli/releases/v0.3.0/task.phar
 $> chmod +x /usr/bin/task
 ```
 
