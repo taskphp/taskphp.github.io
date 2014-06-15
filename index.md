@@ -20,8 +20,7 @@ Got a PHP project? Heard of Grunt and Gulp but don't use NodeJS?  Task is a pure
 
 Ask us anything on Twitter at [@taskphp](https://twitter.com/taskphp).
 
-Example
-=======
+# Example
 
 ```php
 <?php
@@ -68,8 +67,7 @@ $project->addTask('css.watch', ['watch', function ($watch) {
 return $project;
 ```
 
-Installation
-============
+# Installation
 
 Add to your `composer.json`:
 
@@ -83,8 +81,36 @@ Add to your `composer.json`:
 
 This will allow you to instantiate a `Task\Project`. To run tasks from the command line, install [task/cli](https://github.com/taskphp/cli). You should probably do this now!
 
-Usage
-=====
+There are 3 options for installation:
+
+## #1 Composer global (recommended)
+```bash
+$> composer global require task/cli ~0.2
+```
+If you haven't installed anything this way before you'll need to update your `PATH`:
+```bash
+export PATH=$PATH:$HOME/.composer/vendor/bin
+```
+
+## #2 Phar
+
+Download from Github:
+```bash
+$> wget -O /usr/bin/task https://github.com/task/cli/releases/v0.2.0/task.phar
+$> chmod +x /usr/bin/task
+```
+
+## #3 Composer
+```json
+...
+"require-dev": {
+    "task/cli": "~0.2"
+}
+...
+```
+Run at `./vendor/bin/task`.
+
+# Usage
 
 The only requirements are that you implement a `Taskfile` that returns a `Task\Project`:
 
@@ -149,8 +175,7 @@ $> task greet
 Hello, World!
 ```
 
-Plugins
-=======
+# Plugins
 
 Plugins are where the real work gets done.
 
@@ -202,23 +227,19 @@ mbfisher
 
 This is a totally pointless example but it demonstrates some core concepts.
 
-DI
---
+## DI
 
 Dependency injection is used to setup plugins and inject them into tasks. `Project::inject` allows you to fill a `Pimple` container up with anything you like. 
 
-Injection
----------
+## Injection
 
 Plugins are injected into tasks using `Task\Injector`. Instead of a `Closure`, pass `Project::addTask` an array with your task as the last element. The preceding elements should be IDs stored in the container; they will be retrieved and passed as arguments to the task.
 
-Streams
--------
+## Streams
 
 Plugins are encouraged to use NodeJS-style streams for handling data flows. `Task\Plugin\Stream\ReadableInterface` provides `read` and `pipe` methods, `Task\Plugin\Stream\WritableInterface` provides a `write` method. In the example above `ProcessPlugin::build` returns a `Task\Plugin\Process\ProcessBuilder`, which implements `ReadableInterface`, allowing us to `pipe` a `Task\Plugin\Console\Output\Output` instance to it, which implements `WritableInterface`.
 
-Discussion
-==========
+## Discussion
 
 * See [nikic's article on PHP over XML](https://nikic.github.io/2012/07/09/A-plea-for-less-XML-configuration-files.html) for a great argument for using pure PHP for configuration.
 
